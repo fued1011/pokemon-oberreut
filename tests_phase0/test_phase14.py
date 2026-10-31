@@ -75,7 +75,9 @@ def test_explicit_pixel_source_and_generated_bytes_are_repeatable(tmp_path):
 
 
 def test_installed_phase14_assets_match_generated_output():
-    derived = (ROOT / "data/oberreut/phase15a-derived"
+    derived = (ROOT / "data/oberreut/phase15a1-derived"
+               if (ROOT / "data/oberreut/phase15a1-derived").exists()
+               else ROOT / "data/oberreut/phase15a-derived"
                if (ROOT / "data/oberreut/phase15a-derived").exists()
                else ROOT / "data/oberreut/phase14-derived")
     for name in ("Oberreut", "OberreutOst"):

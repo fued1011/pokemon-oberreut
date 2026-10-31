@@ -68,7 +68,8 @@ def test_all_output_bytes_repeat_and_hardware_limits_hold(tmp_path):
 
 
 def test_installed_refined_assets_match_latest_generated_output():
-    derived = ('phase15a-derived' if (ROOT/'data/oberreut/phase15a-derived').exists()
+    derived = ('phase15a1-derived' if (ROOT/'data/oberreut/phase15a1-derived').exists()
+               else 'phase15a-derived' if (ROOT/'data/oberreut/phase15a-derived').exists()
                else 'phase14-derived' if (ROOT/'data/oberreut/phase14-derived').exists()
                else 'phase13-derived')
     for name in ('Oberreut','OberreutOst'):

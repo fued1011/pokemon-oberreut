@@ -33,7 +33,10 @@
     "graphics/oberreut/north_residential_phase15a.json",
     "tools/oberreut/phase15a.py",
     "tests_phase0/test_phase15a.py",
-    "tests_phase0/runtime_phase15a_visual.py"
+    "tests_phase0/runtime_phase15a_visual.py",
+    "tools/oberreut/phase15a1.py",
+    "tests_phase0/test_phase15a1.py",
+    "tests_phase0/runtime_phase15a1_collision.py"
   ],
   "gis_files": [
     "data/oberreut/boundary.geojson",

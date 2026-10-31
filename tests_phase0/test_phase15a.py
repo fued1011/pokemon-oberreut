@@ -95,7 +95,9 @@ def test_walkable_tree_trunks_are_documented_without_collision_change(tmp_path):
 
 
 def test_installed_phase15a_assets_match_generated_output():
-    derived = ROOT / "data/oberreut/phase15a-derived"
+    derived = (ROOT / "data/oberreut/phase15a1-derived"
+               if (ROOT / "data/oberreut/phase15a1-derived").exists()
+               else ROOT / "data/oberreut/phase15a-derived")
     for name in ("Oberreut", "OberreutOst"):
         assert (ROOT / f"data/layouts/{name}/map.bin").read_bytes() == (derived / name / "map.bin").read_bytes()
     for name in ("tiles.png", "metatiles.bin", "metatile_attributes.bin"):

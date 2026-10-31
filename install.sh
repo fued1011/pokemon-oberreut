@@ -48,12 +48,13 @@ python_bin="${PHASE1_PYTHON:-python3}"
 "$python_bin" "$dest/tools/oberreut/phase13.py" --root "$dest" --output "$dest/data/oberreut/phase13-derived" >/dev/null
 "$python_bin" "$dest/tools/oberreut/phase14.py" --root "$dest" --output "$dest/data/oberreut/phase14-derived" >/dev/null
 "$python_bin" "$dest/tools/oberreut/phase15a.py" --root "$dest" --output "$dest/data/oberreut/phase15a-derived" >/dev/null
+"$python_bin" "$dest/tools/oberreut/phase15a1.py" --root "$dest" --output "$dest/data/oberreut/phase15a1-derived" >/dev/null
 for name in Oberreut OberreutOst; do
-    cp "$dest/data/oberreut/phase15a-derived/$name/map.bin" "$dest/data/layouts/$name/map.bin"
+    cp "$dest/data/oberreut/phase15a1-derived/$name/map.bin" "$dest/data/layouts/$name/map.bin"
 done
 for name in tiles.png metatiles.bin metatile_attributes.bin; do
-    cp "$dest/data/oberreut/phase15a-derived/$name" "$dest/data/tilesets/secondary/oberreut/$name"
+    cp "$dest/data/oberreut/phase15a1-derived/$name" "$dest/data/tilesets/secondary/oberreut/$name"
 done
 mkdir -p "$dest/data/tilesets/secondary/oberreut/palettes"
-cp "$dest"/data/oberreut/phase15a-derived/palettes/*.pal "$dest/data/tilesets/secondary/oberreut/palettes/"
+cp "$dest"/data/oberreut/phase15a1-derived/palettes/*.pal "$dest/data/tilesets/secondary/oberreut/palettes/"
 echo "Installed at $dest; generated assets remain in this separate upstream tree."

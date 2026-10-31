@@ -29,7 +29,11 @@
     "graphics/oberreut/julius_leber_phase14.json",
     "tools/oberreut/phase14.py",
     "tests_phase0/test_phase14.py",
-    "tests_phase0/runtime_phase14_visual.py"
+    "tests_phase0/runtime_phase14_visual.py",
+    "graphics/oberreut/north_residential_phase15a.json",
+    "tools/oberreut/phase15a.py",
+    "tests_phase0/test_phase15a.py",
+    "tests_phase0/runtime_phase15a_visual.py"
   ],
   "gis_files": [
     "data/oberreut/boundary.geojson",

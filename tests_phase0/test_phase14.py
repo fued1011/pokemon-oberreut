@@ -75,7 +75,10 @@ def test_explicit_pixel_source_and_generated_bytes_are_repeatable(tmp_path):
 
 
 def test_installed_phase14_assets_match_generated_output():
+    derived = (ROOT / "data/oberreut/phase15a-derived"
+               if (ROOT / "data/oberreut/phase15a-derived").exists()
+               else ROOT / "data/oberreut/phase14-derived")
     for name in ("Oberreut", "OberreutOst"):
-        assert (ROOT / f"data/layouts/{name}/map.bin").read_bytes() == (ROOT / f"data/oberreut/phase14-derived/{name}/map.bin").read_bytes()
+        assert (ROOT / f"data/layouts/{name}/map.bin").read_bytes() == (derived / name / "map.bin").read_bytes()
     for name in ("tiles.png", "metatiles.bin", "metatile_attributes.bin"):
-        assert (ROOT / f"data/tilesets/secondary/oberreut/{name}").read_bytes() == (ROOT / f"data/oberreut/phase14-derived/{name}").read_bytes()
+        assert (ROOT / f"data/tilesets/secondary/oberreut/{name}").read_bytes() == (derived / name).read_bytes()

@@ -74,9 +74,11 @@ def test_native_layouts_install_phase1b_without_other_metatile_changes():
         phase12 = ROOT / 'data/oberreut/phase12-derived' / name / 'map.bin'
         phase13 = ROOT / f'data/oberreut/phase13-derived/{name}/map.bin'
         phase14 = ROOT / f'data/oberreut/phase14-derived/{name}/map.bin'
+        phase15a = ROOT / f'data/oberreut/phase15a-derived/{name}/map.bin'
         assert (native == refined or (phase12.exists() and native == phase12.read_bytes())
                 or (phase13.exists() and native == phase13.read_bytes())
-                or (phase14.exists() and native == phase14.read_bytes()))
+                or (phase14.exists() and native == phase14.read_bytes())
+                or (phase15a.exists() and native == phase15a.read_bytes()))
         after = np.frombuffer(refined, dtype='<u2')
         before = np.frombuffer(baseline, dtype='<u2')
         changed = (after & 1023) != (before & 1023)

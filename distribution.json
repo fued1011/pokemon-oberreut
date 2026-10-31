@@ -1,0 +1,48 @@
+{
+  "upstream_url": "https://github.com/rh-hideout/pokeemerald-expansion.git",
+  "upstream_tag": "expansion/1.17.1",
+  "upstream_commit": "bb1093a7c72d3961d9a37d8e02ad2abc2c866682",
+  "owned_files": [
+    "data/layouts/Oberreut/manifest.json",
+    "data/maps/Oberreut/map.json",
+    "data/maps/Oberreut/scripts.inc",
+    "data/maps/OberreutOst/map.json",
+    "data/maps/OberreutOst/scripts.inc",
+    "tests_phase0/runtime_mgba.py",
+    "tests_phase0/runtime_phase1.py",
+    "tests_phase0/runtime_phase12_visual.py",
+    "tests_phase0/test_map.py",
+    "tests_phase0/test_phase1.py",
+    "tests_phase0/test_phase12.py",
+    "tests_phase0/test_phase1b.py",
+    "tools/oberreut/generate_map.py",
+    "tools/oberreut/phase12.py",
+    "tools/oberreut/phase1_map.py",
+    "tools/oberreut/phase1b.py",
+    "tools/oberreut/requirements-phase1.txt"
+  ],
+  "gis_files": [
+    "data/oberreut/boundary.geojson",
+    "data/oberreut/chunks/0_0.json",
+    "data/oberreut/chunks/0_1.json",
+    "data/oberreut/chunks/1_0.json",
+    "data/oberreut/chunks/1_1.json",
+    "data/oberreut/metadata.json",
+    "data/oberreut/osm.json",
+    "data/oberreut/overpass-endpoint.txt",
+    "data/oberreut/overpass-query.ql",
+    "data/oberreut/raster-metadata.json",
+    "data/oberreut/sources-ledger.json",
+    "data/oberreut/stadtteile-metadata.json"
+  ],
+  "patch_files": [
+    "data/event_scripts.s",
+    "data/layouts/layouts.json",
+    "data/maps/map_groups.json",
+    "src/data/region_map/region_map_sections.json",
+    "src/data/tilesets/graphics.h",
+    "src/data/tilesets/headers.h",
+    "src/data/tilesets/metatiles.h",
+    "src/new_game.c"
+  ]
+}

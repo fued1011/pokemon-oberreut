@@ -26,6 +26,7 @@ SAVE_PTR = int(match.group(1), 16)
 
 
 def open_game(save):
+    (ROOT / "logs").mkdir(exist_ok=True)
     gba = core.load_path(str(ROM))
     if gba is None:
         raise RuntimeError(f"Cannot load {ROM}")

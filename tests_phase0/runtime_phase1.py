@@ -90,7 +90,15 @@ def reload_east(save):
     frames(gba, 60)
     moved = location(gba)
     assert moved != initial and moved[:2] in ([0, EAST], [0, 57]), (initial, moved)
-    print(json.dumps({'fresh_continue': saved, 'after_left': moved}), flush=True)
+    gba.set_keys(GBA.KEY_LEFT)
+    frames(gba, 90)
+    gba.set_keys()
+    frames(gba, 30)
+    returned = location(gba)
+    assert returned[:2] == [0, 57] and returned[3] == 27, returned
+    framebuffer.to_pil().convert('RGB').save(ROOT / 'logs/phase1-return-west.png')
+    print(json.dumps({'fresh_continue': saved, 'after_left': moved,
+                      'return_west': returned}), flush=True)
 
 
 if __name__ == '__main__':

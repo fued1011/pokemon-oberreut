@@ -26,22 +26,14 @@ git -C "$dest" apply "$here/overlay.patch"
 # Upstream's history make target rejects exported source archives without this flag.
 touch "$dest/.histignore"
 # Explicit allowlist: do not copy the public repo's .git, upstream assets, or builds.
-files=(
- data/layouts/Oberreut/manifest.json
- data/maps/Oberreut/map.json data/maps/Oberreut/scripts.inc
- data/maps/OberreutOst/map.json data/maps/OberreutOst/scripts.inc
- tools/oberreut/generate_map.py tools/oberreut/phase1_map.py
- tools/oberreut/phase1b.py tools/oberreut/phase12.py
- tools/oberreut/requirements-phase1.txt
- data/oberreut/osm.json data/oberreut/boundary.geojson
- data/oberreut/overpass-query.ql data/oberreut/overpass-endpoint.txt
- data/oberreut/raster-metadata.json data/oberreut/metadata.json
- data/oberreut/stadtteile-metadata.json data/oberreut/sources-ledger.json
-)
-for file in "${files[@]}" "$here"/data/oberreut/chunks/*.json "$here"/tests_phase0/*.py; do
-    if [[ "$file" == "$here"/* ]]; then rel="${file#"$here"/}"; else rel="$file"; file="$here/$file"; fi
+mapfile -t files < <(python3 -c '
+import json, sys
+manifest = json.load(open(sys.argv[1]))
+print("\n".join(manifest["owned_files"] + manifest["gis_files"]))
+' "$here/distribution.json")
+for rel in "${files[@]}"; do
     mkdir -p "$dest/$(dirname "$rel")"
-    cp "$file" "$dest/$rel"
+    cp "$here/$rel" "$dest/$rel"
 done
 # The border is identical to stock Route101; never distribute the byte copy.
 mkdir -p "$dest/data/layouts/OberreutOst" "$dest/data/tilesets/secondary/oberreut"

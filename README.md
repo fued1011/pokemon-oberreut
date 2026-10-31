@@ -35,3 +35,11 @@ Die westliche und östliche Karte (je 64×64 Zellen) benutzen die native Emerald
 Siehe [RECHTE.md](RECHTE.md). Das Roh-OSM-JSON ist unverändert, unter ODbL samt Herkunft/Attribution, die amtliche Stadtteilgrenze ist laut archivierten CKAN-Metadaten CC0. Eigenes Programmwerk im Overlay wird nur soweit rechtlich möglich unter GPL-3.0-or-later angeboten; der Patch ist **keine Neulizenzierung** von Upstream-Kontextzeilen. Die Distribution enthält keine Referenzbilder. Trotz dieses Zuschnitts ist eine rechtliche Einzelfallprüfung für öffentliche Nutzung, Marken, Datennachnutzung und Verbreitung selbst gebauter ROMs erforderlich. **ROMs nicht veröffentlichen.**
 
 Die Build-Reproduzierbarkeit hängt zusätzlich von einer geeigneten GBA-Toolchain und Python-Distribution ab; die Python-Versionen sind gepinnt, native Compiler und Upstream-Buildwerkzeuge nicht in diesem Repository vendort. Upstream-Tag/Commit und GIS-Eingangsdateien sind gepinnt. Ein vollständiger unabhängiger Emulator-/Save-Regressionstest und Rechteprüfung durch Fachleute bleiben offen.
+
+## Entwicklungsworkflow und Wiederherstellung
+
+Siehe [DEVELOPMENT.md](docs/DEVELOPMENT.md) für Make-Ziele, sicheren Rückexport,
+Emulator-Tests und die Trennung zwischen öffentlicher Distribution und privatem
+Engine-Baum. `distribution.json` ist die gemeinsame Dateiliste für Installation
+und Export. `scripts/capture_provenance.py ENGINE OUTPUT.json` protokolliert die
+Hashes privater Build-Ergebnisse, ohne deren Inhalte zu veröffentlichen.

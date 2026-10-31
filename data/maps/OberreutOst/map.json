@@ -1,0 +1,21 @@
+{
+  "id": "MAP_OBERREUT_OST",
+  "name": "OberreutOst",
+  "layout": "LAYOUT_OBERREUT_OST",
+  "music": "MUS_LITTLEROOT",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_OBERREUT",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [{"map": "MAP_OBERREUT", "offset": 0, "direction": "left"}],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://transparenz.karlsruhe.de/dataset/stadtteile",
+      "title": "",
+      "accessed": "2026-10-30"
+    },
+    {
+      "id": 2,
+      "url": "https://transparenz.karlsruhe.de/api/3/action/package_show?id=stadtteile",
+      "title": "",
+      "accessed": "2026-10-30"
+    },
+    {
+      "id": 3,
+      "url": "https://transparenz.karlsruhe.de/dataset/8474ba52-f851-4f4b-b05a-1cba9bbd1f4d/resource/2a7fd644-bc67-477a-bb9e-cf88f076b7af/download/stadtteile.json",
+      "title": "",
+      "accessed": "2026-10-30"
+    },
+    {
+      "id": 4,
+      "url": "https://overpass-api.de/api/interpreter",
+      "title": "",
+      "accessed": "2026-10-30"
+    },
+    {
+      "id": 5,
+      "url": "https://nominatim.openstreetmap.org/search?q=Oberreut%2C+Karlsruhe&format=jsonv2&polygon_geojson=1",
+      "title": "",
+      "accessed": "2026-10-30"
+    }
+  ]
+}

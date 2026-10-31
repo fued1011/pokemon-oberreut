@@ -1,0 +1,158 @@
+diff --git a/data/event_scripts.s b/data/event_scripts.s
+index bc9688b6..1400fbe0 100644
+--- a/data/event_scripts.s
++++ b/data/event_scripts.s
+@@ -140,6 +140,8 @@ gStdScripts_End::
+ 	.include "data/maps/SootopolisCity/scripts.inc"
+ 	.include "data/maps/EverGrandeCity/scripts.inc"
+ 	.include "data/maps/LittlerootTown/scripts.inc"
++	.include "data/maps/Oberreut/scripts.inc"
++	.include "data/maps/OberreutOst/scripts.inc"
+ 	.include "data/maps/OldaleTown/scripts.inc"
+ 	.include "data/maps/DewfordTown/scripts.inc"
+ 	.include "data/maps/LavaridgeTown/scripts.inc"
+diff --git a/data/layouts/layouts.json b/data/layouts/layouts.json
+index 2b25587a..0704003d 100644
+--- a/data/layouts/layouts.json
++++ b/data/layouts/layouts.json
+@@ -9323,6 +9323,28 @@
+       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
+       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
+       "layout_version": "frlg"
++    },
++    {
++      "id": "LAYOUT_OBERREUT",
++      "name": "Oberreut_Layout",
++      "width": 64,
++      "height": 64,
++      "primary_tileset": "gTileset_General",
++      "secondary_tileset": "gTileset_Oberreut",
++      "border_filepath": "data/layouts/Oberreut/border.bin",
++      "blockdata_filepath": "data/layouts/Oberreut/map.bin",
++      "layout_version": "emerald"
++    },
++    {
++      "id": "LAYOUT_OBERREUT_OST",
++      "name": "OberreutOst_Layout",
++      "width": 64,
++      "height": 64,
++      "primary_tileset": "gTileset_General",
++      "secondary_tileset": "gTileset_Oberreut",
++      "border_filepath": "data/layouts/OberreutOst/border.bin",
++      "blockdata_filepath": "data/layouts/OberreutOst/map.bin",
++      "layout_version": "emerald"
+     }
+   ]
+ }
+diff --git a/data/maps/map_groups.json b/data/maps/map_groups.json
+index d6320f48..e3f450fb 100644
+--- a/data/maps/map_groups.json
++++ b/data/maps/map_groups.json
+@@ -133,7 +133,9 @@
+     "Underwater_Route128",
+     "Underwater_Route129",
+     "Underwater_Route105",
+-    "Underwater_Route125"
++    "Underwater_Route125",
++    "Oberreut",
++    "OberreutOst"
+   ],
+   "gMapGroup_IndoorLittleroot": [
+     "LittlerootTown_BrendansHouse_1F",
+diff --git a/src/data/region_map/region_map_sections.json b/src/data/region_map/region_map_sections.json
+index e1703383..ca99d4cc 100644
+--- a/src/data/region_map/region_map_sections.json
++++ b/src/data/region_map/region_map_sections.json
+@@ -1630,6 +1630,10 @@
+       "y": 4,
+       "width": 1,
+       "height": 1
++    },
++    {
++      "id": "MAPSEC_OBERREUT",
++      "name": "OBERREUT"
+     }
+   ]
+ }
+diff --git a/src/data/tilesets/graphics.h b/src/data/tilesets/graphics.h
+index e1a44dca..6e7e4fe7 100644
+--- a/src/data/tilesets/graphics.h
++++ b/src/data/tilesets/graphics.h
+@@ -46,6 +46,27 @@ const u16 gTilesetPalettes_SecretBaseRedCave[][16] =
+ 
+ const u32 gTilesetTiles_Petalburg[] = INCGFX_U32("data/tilesets/secondary/petalburg/tiles.png", ".4bpp.fastSmol", "-num_tiles 159 -Wnum_tiles");
+ 
++const u32 gTilesetTiles_Oberreut[] = INCGFX_U32("data/tilesets/secondary/oberreut/tiles.png", ".4bpp.fastSmol", "-num_tiles 224 -Wnum_tiles");
++const u16 gTilesetPalettes_Oberreut[][16] =
++{
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/00.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/01.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/02.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/03.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/04.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/05.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/06.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/07.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/08.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/09.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/10.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/11.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/12.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/13.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/14.pal", ".gbapal"),
++    INCGFX_U16("data/tilesets/secondary/oberreut/palettes/15.pal", ".gbapal"),
++};
++
+ const u16 gTilesetPalettes_Petalburg[][16] =
+ {
+     INCGFX_U16("data/tilesets/secondary/petalburg/palettes/00.pal", ".gbapal"),
+diff --git a/src/data/tilesets/headers.h b/src/data/tilesets/headers.h
+index c7702c23..333dc5ed 100644
+--- a/src/data/tilesets/headers.h
++++ b/src/data/tilesets/headers.h
+@@ -52,6 +52,17 @@ const struct Tileset gTileset_Petalburg =
+     .callback = InitTilesetAnim_Petalburg,
+ };
+ 
++const struct Tileset gTileset_Oberreut =
++{
++    .isCompressed = TRUE,
++    .isSecondary = TRUE,
++    .tiles = gTilesetTiles_Oberreut,
++    .palettes = gTilesetPalettes_Oberreut,
++    .metatiles = gMetatiles_Oberreut,
++    .metatileAttributes = gMetatileAttributes_Oberreut,
++    .callback = NULL,
++};
++
+ const struct Tileset gTileset_Rustboro =
+ {
+     .isCompressed = TRUE,
+diff --git a/src/data/tilesets/metatiles.h b/src/data/tilesets/metatiles.h
+index f82ea00f..be8cac7c 100644
+--- a/src/data/tilesets/metatiles.h
++++ b/src/data/tilesets/metatiles.h
+@@ -12,6 +12,9 @@ const u16 gMetatileAttributes_General[] = INCBIN_U16("data/tilesets/primary/gene
+ const u16 gMetatiles_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatiles.bin");
+ const u16 gMetatileAttributes_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatile_attributes.bin");
+ 
++const u16 gMetatiles_Oberreut[] = INCBIN_U16("data/tilesets/secondary/oberreut/metatiles.bin");
++const u16 gMetatileAttributes_Oberreut[] = INCBIN_U16("data/tilesets/secondary/oberreut/metatile_attributes.bin");
++
+ const u16 gMetatiles_Rustboro[] = INCBIN_U16("data/tilesets/secondary/rustboro/metatiles.bin");
+ const u16 gMetatileAttributes_Rustboro[] = INCBIN_U16("data/tilesets/secondary/rustboro/metatile_attributes.bin");
+ 
+diff --git a/src/new_game.c b/src/new_game.c
+index 89a2bf4c..20443dfb 100644
+--- a/src/new_game.c
++++ b/src/new_game.c
+@@ -138,7 +138,8 @@ static void WarpToTruck(void)
+     if (IS_FRLG)
+         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
+     else
+-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
++        // Phase 0 starts directly on the native GIS-derived Oberreut map.
++        SetWarpDestination(MAP_GROUP(MAP_OBERREUT), MAP_NUM(MAP_OBERREUT), WARP_ID_NONE, 30, 28);
+     WarpIntoMap();
+ }
+ 

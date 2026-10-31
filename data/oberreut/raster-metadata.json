@@ -1,0 +1,120 @@
+{
+  "crs": "EPSG:25832",
+  "origin_easting": 453120,
+  "origin_northing": 5426432,
+  "tile_m": 2,
+  "tile_px": 16,
+  "chunk_tiles": 128,
+  "width": 256,
+  "height": 256,
+  "chunk_count": 4,
+  "kinds": [
+    "outside",
+    "grass",
+    "paved",
+    "path",
+    "road",
+    "tram",
+    "square",
+    "building",
+    "water",
+    "woodland"
+  ],
+  "colors": [
+    [
+      12,
+      23,
+      30
+    ],
+    [
+      82,
+      139,
+      92
+    ],
+    [
+      166,
+      169,
+      144
+    ],
+    [
+      195,
+      170,
+      128
+    ],
+    [
+      99,
+      111,
+      114
+    ],
+    [
+      168,
+      153,
+      126
+    ],
+    [
+      198,
+      186,
+      149
+    ],
+    [
+      158,
+      91,
+      78
+    ],
+    [
+      69,
+      133,
+      154
+    ],
+    [
+      57,
+      109,
+      75
+    ]
+  ],
+  "spawn": {
+    "x": 94.5,
+    "y": 188.5
+  },
+  "references": [
+    {
+      "name": "Oberreut Zentrum",
+      "type": "node",
+      "osm_id": 3109761936,
+      "x": 111,
+      "y": 182,
+      "easting": 453342.73383758817,
+      "northing": 5426066.612769515
+    },
+    {
+      "name": "Julius-Leber-Platz",
+      "type": "way",
+      "osm_id": 4940191,
+      "x": 94,
+      "y": 189,
+      "easting": 453308.7761789744,
+      "northing": 5426053.45122911
+    },
+    {
+      "name": "Oberreut Zentrum",
+      "type": "way",
+      "osm_id": 35995211,
+      "x": 113,
+      "y": 188,
+      "easting": 453346.83411113376,
+      "northing": 5426055.62790516
+    }
+  ],
+  "source_sha256": {
+    "osm.json": "f5a9fd6e9ec27865b10f73b64d125379f4181cd2112a0d6962d6bc1b1f235150",
+    "boundary.geojson": "2042247c7913d06516c042fd644ec042548227e3a33d2fde3fed4ad00ed49eb2"
+  },
+  "metrics": {
+    "buildings": {
+      "reference_area_m2": 48292.0,
+      "symmetric_difference_m2": 7587.0,
+      "game_area_m2": 55520,
+      "reference_sampling_m": 0.5
+    }
+  }
+}

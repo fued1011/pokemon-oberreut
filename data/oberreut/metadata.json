@@ -1,0 +1,188 @@
+{
+  "audit_utc": "2026-10-30T20:08:10.325810+00:00",
+  "coordinate_order": "GeoJSON [longitude,latitude]; Overpass bbox [south,west,north,east]",
+  "boundary_crs": "EPSG:4326",
+  "project_crs": "EPSG:25832",
+  "official_boundary": {
+    "source_url": "https://transparenz.karlsruhe.de/dataset/8474ba52-f851-4f4b-b05a-1cba9bbd1f4d/resource/2a7fd644-bc67-477a-bb9e-cf88f076b7af/download/stadtteile.json",
+    "dataset_metadata_url": "https://transparenz.karlsruhe.de/api/3/action/package_show?id=stadtteile",
+    "dataset_name": "Stadtteile Stadt Karlsruhe",
+    "license_id": "http://dcat-ap.de/def/licenses/cc-zero",
+    "feature_properties": {
+      "NUMMER": "12",
+      "NAME": "Oberreut"
+    },
+    "source_feature_count": 27,
+    "geometry_type": "Polygon",
+    "ring_vertex_counts": [
+      225
+    ],
+    "valid": true,
+    "validity_reason": "Valid Geometry",
+    "bbox_wgs84_lonlat": [
+      8.3431088221,
+      48.9759874958,
+      8.3736544966,
+      48.9947137958
+    ],
+    "bounds_epsg25832": [
+      451936.58130004036,
+      5424981.106144968,
+      454169.383997149,
+      5427062.860345113
+    ],
+    "area_m2_epsg25832": 2425658.5150401974,
+    "nominatim_comparison": {
+      "source_url": "https://nominatim.openstreetmap.org/search?q=Oberreut%2C+Karlsruhe&format=jsonv2&polygon_geojson=1",
+      "osm_relation_id": 63381,
+      "osm_boundary_valid": true,
+      "official_vs_osm_symmetric_difference_m2": 22646.713490561953,
+      "official_vs_osm_hausdorff_m": 12.856503071874883
+    }
+  },
+  "osm": {
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "query_path": "overpass-query.ql",
+    "query_bbox_swne": [
+      48.9757,
+      8.3428,
+      48.995,
+      8.374
+    ],
+    "osm3s": {
+      "timestamp_osm_base": "2026-10-30T19:58:06Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "total_elements": 7024,
+    "types": {
+      "node": 69,
+      "way": 6955
+    },
+    "tag_counts_bbox": {
+      "highway": 2224,
+      "public_transport": 84,
+      "railway": 65,
+      "landuse": 496,
+      "leisure": 149,
+      "building": 3977,
+      "natural": 101
+    },
+    "tag_counts_intersecting_official_boundary": {
+      "highway": 1547,
+      "public_transport": 54,
+      "railway": 37,
+      "landuse": 327,
+      "leisure": 94,
+      "building": 1823,
+      "natural": 72
+    },
+    "elements_intersecting_official_boundary": 3907,
+    "elements_not_intersecting_official_boundary": 3117,
+    "invalid_or_unparseable_geometries_count": 0,
+    "invalid_or_unparseable_geometries_examples": [],
+    "out_of_range_or_nonfinite_coordinate_count": 0,
+    "duplicate_id_count": 0,
+    "named_highways_intersecting_boundary": [
+      "Albert-Braun-Straße",
+      "Alfred-Delp-Platz",
+      "Artillerieweg",
+      "Badeniaplatz",
+      "Bernhard-Lichtenberg-Straße",
+      "Bonhoefferstraße",
+      "Edith-Stein-Straße",
+      "Elisabeth-von-Thadden-Straße",
+      "Esperantobrücke",
+      "Eugen-Geck-Straße",
+      "Eva-Maria-Buch-Straße",
+      "Friedrich-Weick-Straße",
+      "Goerdelerstraße",
+      "Graf-Galen-Straße",
+      "Graf-Stauffenberg-Straße",
+      "Großoberfeld",
+      "Gustav-Schulenburg-Straße",
+      "Helmut-Kern-Allee",
+      "Hermann-Müller-Würtz-Straße",
+      "Joachim-Kurzaj-Weg",
+      "Johanna-Kirchner-Straße",
+      "Johestraße",
+      "Julius-Leber-Platz",
+      "Kapellenweg",
+      "Karl-Flößer-Straße",
+      "Karl-Heinz-Roesel-Weg",
+      "Kleinoberfeld",
+      "Lindenweg",
+      "Maria-Terwiel-Straße",
+      "Max-Habermann-Straße",
+      "Mittelschmallen",
+      "Otto-Wels-Straße",
+      "Pulverhausstraße",
+      "Rosenweg",
+      "Rudolf-Breitscheid-Straße",
+      "Schwimmschulweg",
+      "Tulpenweg",
+      "Waldweg",
+      "Weiße-Rose-Weg",
+      "Wilhelm-Leuschner-Straße",
+      "Woerishofferstraße",
+      "Ährenweg"
+    ],
+    "named_squares_intersecting_boundary": [
+      "Alfred-Delp-Platz",
+      "Julius-Leber-Platz"
+    ],
+    "named_tram_stops_intersecting_boundary": [
+      "Albert-Braun-Straße",
+      "Badeniaplatz",
+      "Oberreut Zentrum",
+      "Wilhelm-Leuschner-Straße"
+    ],
+    "named_transit_stops_intersecting_boundary": [
+      "Albert-Braun-Straße",
+      "Badeniaplatz",
+      "Badeniaplatz Steig A",
+      "Bernhard-Lichtenberg-Straße",
+      "Eugen-Geck-Straße",
+      "Eva-Maria-Buch-Straße",
+      "Hardecksiedlung",
+      "Johanna-Kirchner-Straße",
+      "Medienbus, Stadtbibliothek",
+      "Oberreut Badeniaplatz",
+      "Oberreut Zentrum",
+      "Rudolf-Breitscheid-Straße",
+      "Schwimmschulweg",
+      "Wilhelm-Leuschner-Straße"
+    ]
+  },
+  "files": {
+    "boundary.geojson": {
+      "path": "boundary.geojson",
+      "bytes": 6634,
+      "sha256": "2042247c7913d06516c042fd644ec042548227e3a33d2fde3fed4ad00ed49eb2"
+    },
+    "osm.json": {
+      "path": "osm.json",
+      "bytes": 5754727,
+      "sha256": "f5a9fd6e9ec27865b10f73b64d125379f4181cd2112a0d6962d6bc1b1f235150"
+    },
+    "stadtteile-source.geojson": {
+      "path": "stadtteile-source.geojson",
+      "bytes": 783330,
+      "sha256": "566bd2196167b6856bbfd1d7973f32a2ae6e92e6c1ffee97e925f1b422c3bf3e"
+    },
+    "stadtteile-metadata.json": {
+      "path": "stadtteile-metadata.json",
+      "bytes": 5247,
+      "sha256": "84bfe2940defd3345de68563b1d2600a0f0f6893e91b0b2f0368ecfa31266c0c"
+    },
+    "nominatim-oberreut.json": {
+      "path": "nominatim-oberreut.json",
+      "bytes": 1690,
+      "sha256": "5e91ff07d4588237a9e6cc1a4e732d3adb5988723e1824af3945b4414b552bc4"
+    },
+    "overpass-query.ql": {
+      "path": "overpass-query.ql",
+      "bytes": 562,
+      "sha256": "5d512a27958eb02b42be5e5920329e5e245ca0c8b983e0df93459410bf6e0f87"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source_sha256": {
+    "osm.json": "f5a9fd6e9ec27865b10f73b64d125379f4181cd2112a0d6962d6bc1b1f235150",
+    "boundary.geojson": "2042247c7913d06516c042fd644ec042548227e3a33d2fde3fed4ad00ed49eb2"
+  },
+  "raster_sha256": "e86e43db6f610b1d9cb8dd697980addd8d8085decae379377175a8b194fc2093",
+  "crop": [
+    64,
+    160,
+    64,
+    64
+  ],
+  "spawn": [
+    30,
+    28
+  ],
+  "terrain_counts": {
+    "building": 897,
+    "grass": 1685,
+    "path": 500,
+    "road": 221,
+    "square": 623,
+    "tram": 170
+  },
+  "blocked_cells": 1095,
+  "encoding": "GBA little-endian u16; bits 0-9 metatile, bits 10-11 collision, bits 12-15 elevation"
+}

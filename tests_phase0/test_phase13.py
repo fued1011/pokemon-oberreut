@@ -67,8 +67,10 @@ def test_all_output_bytes_repeat_and_hardware_limits_hold(tmp_path):
         assert (tmp_path/f'a/palettes/{i:02}.pal').read_bytes()==(ROOT/f'data/oberreut/phase12-derived/palettes/{i:02}.pal').read_bytes()
 
 
-def test_installed_phase13_assets_match_generated_output():
+def test_installed_refined_assets_match_latest_generated_output():
+    derived = ('phase14-derived' if (ROOT/'data/oberreut/phase14-derived').exists()
+               else 'phase13-derived')
     for name in ('Oberreut','OberreutOst'):
-        assert (ROOT/f'data/layouts/{name}/map.bin').read_bytes()==(ROOT/f'data/oberreut/phase13-derived/{name}/map.bin').read_bytes()
+        assert (ROOT/f'data/layouts/{name}/map.bin').read_bytes()==(ROOT/f'data/oberreut/{derived}/{name}/map.bin').read_bytes()
     for name in ('tiles.png','metatiles.bin','metatile_attributes.bin'):
-        assert (ROOT/f'data/tilesets/secondary/oberreut/{name}').read_bytes()==(ROOT/f'data/oberreut/phase13-derived/{name}').read_bytes()
+        assert (ROOT/f'data/tilesets/secondary/oberreut/{name}').read_bytes()==(ROOT/f'data/oberreut/{derived}/{name}').read_bytes()

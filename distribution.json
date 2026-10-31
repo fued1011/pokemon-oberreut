@@ -23,7 +23,13 @@
     "tools/oberreut/requirements-phase1.txt",
     "tools/oberreut/phase13.py",
     "tests_phase0/test_phase13.py",
-    "tests_phase0/runtime_slice_visual.py"
+    "tests_phase0/runtime_slice_visual.py",
+    "docs/JULIUS_LEBER_VISUAL_PLAN.md",
+    "docs/julius-leber-reference.svg",
+    "graphics/oberreut/julius_leber_phase14.json",
+    "tools/oberreut/phase14.py",
+    "tests_phase0/test_phase14.py",
+    "tests_phase0/runtime_phase14_visual.py"
   ],
   "gis_files": [
     "data/oberreut/boundary.geojson",

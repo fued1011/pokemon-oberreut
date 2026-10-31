@@ -78,7 +78,9 @@ def test_native_porymap_tileset_wiring_and_installed_layouts():
     selected = [x for x in layouts if x['id'] in ('LAYOUT_OBERREUT','LAYOUT_OBERREUT_OST')]
     assert len(selected) == 2
     assert all(x['secondary_tileset'] == 'gTileset_Oberreut' for x in selected)
-    installed = 'phase13-derived' if (ROOT/'data/oberreut/phase13-derived').exists() else 'phase12-derived'
+    installed = ('phase14-derived' if (ROOT/'data/oberreut/phase14-derived').exists()
+                 else 'phase13-derived' if (ROOT/'data/oberreut/phase13-derived').exists()
+                 else 'phase12-derived')
     for name in ('Oberreut','OberreutOst'):
         assert (ROOT/f'data/layouts/{name}/map.bin').read_bytes() == (ROOT/f'data/oberreut/{installed}/{name}/map.bin').read_bytes()
     for name in ('tiles.png','metatiles.bin','metatile_attributes.bin'):

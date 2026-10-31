@@ -13,7 +13,7 @@ parser.add_argument('output', type=Path)
 args = parser.parse_args()
 root = args.engine.resolve()
 paths = [root / 'pokeemerald.gba', root / 'pokeemerald.map']
-for rel in ('data/oberreut/phase12-derived', 'data/oberreut/phase13-derived', 'logs'):
+for rel in ('data/oberreut/phase12-derived', 'data/oberreut/phase13-derived', 'data/oberreut/phase14-derived', 'logs'):
     paths.extend(p for p in (root / rel).rglob('*') if p.is_file())
 result = {
     'upstream_commit': json.loads((Path(__file__).resolve().parents[1] / 'distribution.json').read_text())['upstream_commit'],

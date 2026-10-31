@@ -62,7 +62,25 @@ def test_native_map_is_registered_with_start_warp_and_save_path():
     assert "Oberreut" in maps["gMapGroup_TownsAndRoutes"]
     assert any(l["id"] == "LAYOUT_OBERREUT" and l["width"] == 64 and l["height"] == 64 for l in layouts["layouts"])
     assert map_json["layout"] == "LAYOUT_OBERREUT"
-    assert map_json["object_events"] == map_json["warp_events"] == map_json["coord_events"] == []
+    assert map_json["warp_events"] == map_json["coord_events"] == []
+    assert map_json["object_events"] == [{
+        "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+        "x": 35,
+        "y": 28,
+        "elevation": 0,
+        "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "trainer_type": "TRAINER_TYPE_NONE",
+        "trainer_sight_or_berry_tree_id": "0",
+        "script": "Oberreut_EventScript_Resident",
+        "flag": "0",
+    }]
+    layout = struct.unpack("<4096H", (ROOT / "data/layouts/Oberreut/map.bin").read_bytes())
+    assert layout[28 * 64 + 35] & 0xC00 == 0
+    scripts = (ROOT / "data/maps/Oberreut/scripts.inc").read_text()
+    assert "msgbox Oberreut_Text_Resident, MSGBOX_NPC" in scripts
+    assert "Willkommen in OBERREUT!" in scripts
     new_game = (ROOT / "src/new_game.c").read_text()
     assert "SetWarpDestination(MAP_GROUP(MAP_OBERREUT), MAP_NUM(MAP_OBERREUT), WARP_ID_NONE, 30, 28)" in new_game
     assert "WarpIntoMap();" in new_game

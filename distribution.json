@@ -9,6 +9,7 @@
     "data/maps/OberreutOst/map.json",
     "data/maps/OberreutOst/scripts.inc",
     "tests_phase0/runtime_mgba.py",
+    "tests_phase0/runtime_npc.py",
     "tests_phase0/runtime_phase1.py",
     "tests_phase0/runtime_phase12_visual.py",
     "tests_phase0/test_map.py",

@@ -60,3 +60,11 @@ referenzieren. Keine Änderungen am Emulator-Quellcode oder der Engine nötig.
 Für Tests `PYTHONPATH=/home/fuchs/oberreut-private/mgba-build/python/lib.linux-x86_64-cpython-314`
 setzen. Diese Build-Schritte sind systemabhängig, kein plattformübergreifender
 Toolchain-Lock.
+
+## Unabhängiger vollständiger Build bestätigt
+
+Auch die zweite Installation wurde vollständig frisch kompiliert. Beide
+32-MiB-ROMs haben SHA-256
+`d842e8ff91c722dcf91ab9d1934920b947a29bee88d403b569d823d7cbc85e90`.
+Das bestätigt die öffentliche Baseline mit der oben dokumentierten Toolchain,
+nicht die mangels Originaldatei unbekannte historische ROM zu `f088918c`.

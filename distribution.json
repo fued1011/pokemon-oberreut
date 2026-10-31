@@ -19,7 +19,10 @@
     "tools/oberreut/phase12.py",
     "tools/oberreut/phase1_map.py",
     "tools/oberreut/phase1b.py",
-    "tools/oberreut/requirements-phase1.txt"
+    "tools/oberreut/requirements-phase1.txt",
+    "tools/oberreut/phase13.py",
+    "tests_phase0/test_phase13.py",
+    "tests_phase0/runtime_slice_visual.py"
   ],
   "gis_files": [
     "data/oberreut/boundary.geojson",

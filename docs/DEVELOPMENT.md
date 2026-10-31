@@ -59,8 +59,10 @@ startet einen neuen Prozess. Es werden keine Spielkoordinaten in RAM geschrieben
 cd /privater/engine-baum
 python tests_phase0/runtime_mgba.py
 python tests_phase0/runtime_phase1.py
-python tests_phase0/runtime_phase12_visual.py 12
 python tests_phase0/runtime_phase12_visual.py 1
+python tests_phase0/runtime_slice_visual.py2
+python tests_phase0/runtime_phase12_visual.py 1
+python tests_phase0/runtime_slice_visual.py
 ```
 
 Dafür die Python-Umgebung mit mGBA verwenden; gegebenenfalls `PYTHONPATH` auf dessen
@@ -68,3 +70,13 @@ gebautes Python-Verzeichnis setzen. Der zweite Test prüft beide Kartenrichtunge
 `logs/` wird automatisch erstellt. Das grafische mGBA-Fenster ist für diese
 headless ausgeführten Funktionstests nicht erforderlich. Porymap-Strukturtests
 ersetzen keinen manuellen Editortest.
+
+## GitHub-Veröffentlichung
+
+Das ursprüngliche Repository bleibt `origin` (pepler1993-dot/pokemon-oberreut).
+Für das hier angemeldete Konto mit Leserechten wird der vom Nutzer beauftragte
+Fork `fued1011/pokemon-oberreut` als Remote `fork` verwendet. Feature-Branches
+gehen dorthin; `main` im Original wird nicht verändert. Ein Merge ins Original
+erfordert dessen Maintainer. CI führt Quell- und Generatorprüfungen aus, lädt
+aber keine generierten Assets hoch. Native Build-/mGBA-Nachweise stehen separat
+in den Testberichten.

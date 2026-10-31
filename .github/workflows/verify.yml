@@ -1,0 +1,23 @@
+name: Overlay verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  source-and-generators:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Install Python dependencies
+        run: python -m pip install -r tools/oberreut/requirements-phase1.txt
+      - name: Check public distribution
+        run: python verify_distribution.py
+      - name: Install pinned engine and generate private assets
+        run: bash install.sh "$RUNNER_TEMP/oberreut-engine"
+      - name: Run generator and native-layout regression suite
+        run: |
+          cd "$RUNNER_TEMP/oberreut-engine"
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests_phase0 -q
+      # Deliberately no artifact upload: generated output contains upstream art.

@@ -72,7 +72,8 @@ def test_native_layouts_install_phase1b_without_other_metatile_changes():
         baseline = (ROOT / 'data/oberreut/phase1-derived' / name / 'map.bin').read_bytes()
         # Phase 1.2 may replace only metatile art in a bounded visual ROI.
         phase12 = ROOT / 'data/oberreut/phase12-derived' / name / 'map.bin'
-        assert native == refined or (phase12.exists() and native == phase12.read_bytes())
+        phase13 = ROOT / f'data/oberreut/phase13-derived/{name}/map.bin'
+        assert native == refined or (phase12.exists() and native == phase12.read_bytes()) or (phase13.exists() and native == phase13.read_bytes())
         after = np.frombuffer(refined, dtype='<u2')
         before = np.frombuffer(baseline, dtype='<u2')
         changed = (after & 1023) != (before & 1023)
